@@ -4,8 +4,6 @@ A complete end-to-end weekly sales forecasting system using **ARIMA/SARIMAX**, *
 
 Includes exploratory analysis, modular pipeline, comprehensive evaluation metrics, publication-ready visualizations, and an interactive **Streamlit dashboard**.
 
-🚀 Live Demo: [https://walmart-hybrid-forecast.streamlit.app](https://walmart-hybrid-forecast.streamlit.app) *(if deployed)*
-
 ## 🚀 Project Overview
 
 This project implements a state-of-the-art hybrid forecasting framework:
@@ -21,34 +19,7 @@ Final Forecast = SARIMAX_Forecast + XGBoost_Predicted_Residuals
 Proven to outperform standalone ARIMA and pure ML models.
 
 ## 📁 Project Structure
-WALMARTSALESFORECASTING/
-│
-├── dashboard/
-│   └── app.py                        # Streamlit dashboard
-│
-├── data/
-│   ├── features.csv
-│   ├── merged_walmart.csv            # Cleaned + merged dataset
-│   ├── stores.csv
-│   └── train.csv
-│
-├── results/                          # All generated outputs
-│   ├── arima_insample.csv
-│   ├── arima_forecast.csv
-│   ├── phase6_metrics.csv
-│   ├── phase6_forecasts_compare.csv
-│   ├── phase6_resid_feature_importance.png
-│   └── ...                      
-│
-├── src/                              # Core processing modules
-│   ├── arima_modeling.py
-│   ├── datapreparation.py
-│   ├── hybrid_forecast_evaluate.py
-│   ├── ml_residual_model.py
-│   ├── timeseries_analysis.py
-│   └── visualization.py
-│
-└── README.md                         
+![alt text](image-12.png)                     
 
 ## 📊 Features Implemented
 Data preprocessing, merging, lag/rolling features, holiday flags 
