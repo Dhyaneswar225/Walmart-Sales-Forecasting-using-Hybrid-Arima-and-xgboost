@@ -8,14 +8,14 @@ Includes exploratory analysis, modular pipeline, comprehensive evaluation metric
 
 This project implements a state-of-the-art hybrid forecasting framework:
 
-1️⃣ **Classical Model (SARIMAX)**  
+1️⃣ **Classical Model (ARIMA)**  
    → Captures trend, 52-week seasonality, autocorrelation
 
 2️⃣ **Machine Learning Model (XGBoost)**  
    → Learns non-linear patterns, holiday effects, external regressors, lag/rolling features
 
 3️⃣ **Hybrid Model**  
-Final Forecast = SARIMAX_Forecast + XGBoost_Predicted_Residuals
+Final Forecast = ARIMA_FORECAST + XGBoost_Predicted_Residuals
 Proven to outperform standalone ARIMA and pure ML models.
 
 ## 📁 Project Structure
@@ -28,12 +28,12 @@ Proven to outperform standalone ARIMA and pure ML models.
 - Full exploratory data analysis (EDA) with trend & seasonality decomposition  
 - ACF/PACF plots and rolling statistics visualization  
 - Stationarity testing using Augmented Dickey-Fuller (ADF)  
-- Automated SARIMAX parameter selection with `auto_arima`  
-- SARIMAX model fitting with exogenous variables  
-- Residual extraction and diagnostics from SARIMAX  
-- XGBoost regressor trained on SARIMAX residuals  
+- Automated ARIMA parameter selection with `auto_arima`  
+- ARIMA model fitting with exogenous variables  
+- Residual extraction and diagnostics from ARIMA  
+- XGBoost regressor trained on ARIMA residuals  
 - Hyperparameter tuning using `RandomizedSearchCV`  
-- Hybrid forecasting: `Final Forecast = SARIMAX + XGBoost(Residuals)`  
+- Hybrid forecasting: **Final Forecast = ARIMA + XGBoost(Residuals)**  
 - Comprehensive evaluation with multiple metrics (RMSE, MAE, MAPE, sMAPE, MASE, wMAPE)  
 - Publication/thesis-ready visualizations  
 - Actual vs Forecast plots with confidence intervals  
