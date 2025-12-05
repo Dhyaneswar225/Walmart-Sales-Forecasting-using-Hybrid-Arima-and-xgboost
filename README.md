@@ -86,7 +86,7 @@ python src/visualization.py
 
 # 9. Launch interactive dashboard
 streamlit run dashboard/app.py
-
+```
 ##Dashboard
 ##Data Exploration
 ![alt text](image.png)
