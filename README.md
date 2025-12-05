@@ -22,12 +22,25 @@ Proven to outperform standalone ARIMA and pure ML models.
 ![alt text](image-12.png)                     
 
 ## 📊 Features Implemented
-Data preprocessing, merging, lag/rolling features, holiday flags 
-Full EDA: trend, seasonality, ACF/PACF, rolling stats 
-Stationarity tests, auto_arima, SARIMAX fitting, residual export 
-XGBoost on SARIMAX residuals with RandomizedSearchCV tuning 
-Hybrid forecast generation & comprehensive evaluation 
-Publication-quality plots (actual vs forecast, feature importance, etc.) 
+- Data preprocessing, merging datasets, handling missing values  
+- Engineered lag features (1, 2, 52 weeks) & rolling statistics (4, 8, 52 weeks)  
+- Added holiday flags and time-based features  
+- Full exploratory data analysis (EDA) with trend & seasonality decomposition  
+- ACF/PACF plots and rolling statistics visualization  
+- Stationarity testing using Augmented Dickey-Fuller (ADF)  
+- Automated SARIMAX parameter selection with `auto_arima`  
+- SARIMAX model fitting with exogenous variables  
+- Residual extraction and diagnostics from SARIMAX  
+- XGBoost regressor trained on SARIMAX residuals  
+- Hyperparameter tuning using `RandomizedSearchCV`  
+- Hybrid forecasting: `Final Forecast = SARIMAX + XGBoost(Residuals)`  
+- Comprehensive evaluation with multiple metrics (RMSE, MAE, MAPE, sMAPE, MASE, wMAPE)  
+- Publication/thesis-ready visualizations  
+- Actual vs Forecast plots with confidence intervals  
+- Residual analysis (ACF/PACF of hybrid errors)  
+- Feature importance plots from XGBoost  
+- Interactive Streamlit dashboard with multiple pages  
+- Fully modular, reusable, and well-documented pipeline
 
 ### Evaluation Metrics (saved in `results/phase6_metrics.csv`)
 - RMSE · MAE · MAPE · sMAPE · MASE · wMAPE
@@ -47,28 +60,31 @@ Publication-quality plots (actual vs forecast, feature importance, etc.)
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/yourusername/WALMARTSALESFORECASTING.git
+git clone https://github.com/Dhyaneswar225/Walmart-Sales-Forecasting-using-Hybrid-Arima-and-xgboost.git
 cd WALMARTSALESFORECASTING
 
 # 2. Install dependencies
-pip install -r requirements.txt
+pip install pandas numpy matplotlib seaborn statsmodels pmdarima xgboost scikit-learn plotly streamlit
 
 # 3. Prepare merged dataset
 python src/datapreparation.py
 
-# 4. Run ARIMA/SARIMAX model
+# 4. Run Timeseries
+python src/timeseries_analysis.py
+
+# 5. Run ARIMA/SARIMAX model
 python src/arima_modeling.py
 
-# 5. Train XGBoost on residuals
+# 6. Train XGBoost on residuals
 python src/ml_residual_model.py
 
-# 6. Generate hybrid forecasts & evaluation
+# 7. Generate hybrid forecasts & evaluation
 python src/hybrid_forecast_evaluate.py
 
-# 7. Create all thesis/publication plots
+# 8. Create all thesis/publication plots
 python src/visualization.py
 
-# 8. Launch interactive dashboard
+# 9. Launch interactive dashboard
 streamlit run dashboard/app.py
 
 ##Dashboard
